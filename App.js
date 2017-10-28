@@ -1,5 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Button, Alert, StatusBar } from 'react-native';
+import { Constants, MapView, Google } from 'expo';
+import { Header, Icon } from 'react-native-elements'; // 0.17.0
 
 export default class App extends React.Component {
   render() {
