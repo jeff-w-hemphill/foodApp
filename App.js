@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button, Alert, StatusBar } from 'react-native';
 import { Constants, MapView, Google } from 'expo';
 import { Header, Icon } from 'react-native-elements'; // 0.17.0
+import Expo from 'expo';
+//import MapView from 'react-native-maps';
 
 export default class App extends Component {
   state = {
-    mapRegion: { latitude: 40.00, longitude: -105.2724, latitudeDelta: 0.0522, longitudeDelta: 0.0021 }
+    mapRegion: { latitude: 39.9295749, longitude: -105.0971474, latitudeDelta: 0.0522, longitudeDelta: 0.0021 }
   };
 
   _handleMapRegionChange = mapRegion => {
@@ -34,10 +36,16 @@ export default class App extends Component {
   
         <MapView
           style={{ alignSelf: 'stretch', height: 520 , marginBottom: 10, marginTop: 40 }}
-          region={this.state.mapRegion}
-          onRegionChange={this._handleMapRegionChange}
-        
-        />
+          region={this.state.mapRegion}>
+          <MapView.Marker
+            key={1}
+            coordinate={{latitude: 39.9295749, longitude: -105.0971474}}
+            title={"Jeff's Casa"}
+            description={"Pizza"}
+          />
+          
+          </MapView>
+
       
        
         <Button 
